@@ -43,6 +43,14 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      <hr />
+      <h1 className="text-3xl">Welcome to Remix</h1>
+      <ul className="list-disc mt-4 pl-6 space-y-2">
+        <img src="public\img\me1.jpg" width={250} height={250}/>
+        <li>Name : Atit Sontirak</li>
+        <li>Class : Information Technology</li>
+        <li>E-mail : <a href="atit.son@rmutto.ac.th">Contact me</a></li>
+      </ul>
     </div>
   );
 }
