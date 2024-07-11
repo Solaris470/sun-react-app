@@ -1,8 +1,9 @@
 import type { MetaFunction } from "@remix-run/node";
+import MyCards from "./MyCards";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
+    { title: "Atit Sontirak" },
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
@@ -44,13 +45,18 @@ export default function Index() {
         </li>
       </ul>
       <hr />
+      <br />  
       <h1 className="text-3xl">Welcome to Remix</h1>
       <ul className="list-disc mt-4 pl-6 space-y-2">
-        <img src="public\img\me1.jpg" width={250} height={250}/>
+        <img src="\img\me1.jpg" width={250} height={250} />
         <li>Name : Atit Sontirak</li>
         <li>Class : Information Technology</li>
-        <li>E-mail : <a href="atit.son@rmutto.ac.th">Contact me</a></li>
+        <li>
+          E-mail : <a href="atit.son@rmutto.ac.th">Contact me</a>
+        </li>
       </ul>
+      <hr />
+      <MyCards />
     </div>
   );
 }
