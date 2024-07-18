@@ -11,6 +11,7 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div className="font-sans p-4">
+      {/* <section className="header bg-gray-200 p-3 rounded-xl">
       <h1 className="text-3xl">Welcome to Remix</h1>
       <ul className="list-disc mt-4 pl-6 space-y-2">
         <li>
@@ -44,9 +45,10 @@ export default function Index() {
           </a>
         </li>
       </ul>
-      <hr />
-      <br />  
-      <h1 className="text-3xl">Welcome to Remix</h1>
+      </section> */}
+      <hr className="m-3"/>
+      <section className="bg-gray-200 p-3 rounded-xl">
+      <h1 className="text-3xl">Welcome to React js + Remix</h1>
       <ul className="list-disc mt-4 pl-6 space-y-2">
         <img src="\img\me1.jpg" width={250} height={250} />
         <li>Name : Atit Sontirak</li>
@@ -55,7 +57,8 @@ export default function Index() {
           E-mail : <a href="atit.son@rmutto.ac.th">Contact me</a>
         </li>
       </ul>
-      <hr />
+      </section>
+      <hr className="m-3"/>
       <MyCards />
     </div>
   );
