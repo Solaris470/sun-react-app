@@ -1,6 +1,7 @@
 import { space } from "postcss/lib/list";
 import { cards } from "./data";
 import { useState } from "react";
+import Sidebar from "./sidebar";
 
 function IsMemeber({ active }: { active: boolean }) {
   if (active) return <span>✅ Hi, VIP Member.</span>;
@@ -26,6 +27,7 @@ function Profile({
 }) {
   return (
     <div className="max-w-sm lg:max-w-full lg:flex p-3 mt-3 rounded-xl">
+      <Sidebar />
       <div
         className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
         style={{ backgroundImage: `url(${bgProf})` }}
@@ -65,8 +67,9 @@ export default function MyCards() {
   const items = cards.filter((cardItems) => cardItems.active == btnactive);
 
   const cardItems = items.map((cardItem, index) => (
+    
     <Profile
-      key={index}
+    key={index}
       name={cardItem.name}
       biog={cardItem.biog}
       bgProf={cardItem.bgProf}
@@ -87,7 +90,7 @@ export default function MyCards() {
   }
 
   return (
-    <main>
+    <main className="container justify-center flex pt-4">
       <section className="banner bg-gray-200 p-3 rounded-xl">
         {" "}
         <h1 className="text-3xl font-bold">My Cards: {name}</h1>
