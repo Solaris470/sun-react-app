@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { sculptureLists } from "./SculptureLists";
-import Sidebar from "./sidebar";
+import Sidebar from "./template/sidebar";
+import AppMenu from "./template/menu";
 
 export default function EProject() {
   const [index, setIndex] = useState(0);
@@ -15,8 +16,10 @@ export default function EProject() {
   }
 
   return (
+    <>
+    <AppMenu />
     <main className="container mx-auto p-4 grid justify-center">
-        <Sidebar />
+        
       <h1 className="font-bold text-lg">
         <i>{sculpture.name}</i> โดย
         {sculpture.author}
@@ -46,5 +49,6 @@ export default function EProject() {
         {index + 1} จาก {sculptureLists.length}
       </h3> 
     </main>
+    </>
   );
 }

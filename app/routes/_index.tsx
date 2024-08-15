@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-import MyCards from "./MyCards";
+import MyCards from "./cards.MyCards";
+import AppMenu from "./template/menu";
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,7 +11,9 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="font-sans p-4">
+    <>
+    {<AppMenu />}
+    <div className="font-sans">
       {/* <section className="header bg-gray-200 p-3 rounded-xl">
       <h1 className="text-3xl">Welcome to Remix</h1>
       <ul className="list-disc mt-4 pl-6 space-y-2">
@@ -46,7 +49,7 @@ export default function Index() {
         </li>
       </ul>
       </section> */}
-      <hr className="m-3"/>
+      <hr className="mb-3"/>
       <section className="bg-gray-200 p-3 rounded-xl">
       <h1 className="text-3xl">Welcome to React js + Remix</h1>
       <ul className="list-disc mt-4 pl-6 space-y-2">
@@ -59,7 +62,7 @@ export default function Index() {
       </ul>
       </section>
       <hr className="m-3"/>
-      <MyCards />
     </div>
+    </>
   );
 }

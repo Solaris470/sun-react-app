@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { sculptureLists } from "./SculptureLists";
-import Sidebar from "./sidebar";
+import Sidebar from "./template/sidebar";
+import AppMenu from "./template/menu";
 
 export default function EProject() {
   const [index, setIndex] = useState(0);
   const [sctList, setSctList] = useState(sculptureLists);
 
   return (
+    <>
+    <AppMenu />
     <main className="container mx-auto p-4 grid justify-center">
-       <Sidebar />
       {sctList.map((item) => (
         <div key={item.id} className="mt-3">
           <button
@@ -53,5 +55,6 @@ export default function EProject() {
         </div>
       ))}
     </main>
+    </>
   );
 }

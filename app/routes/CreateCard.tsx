@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Sidebar from "./sidebar";
+import Sidebar from "./template/sidebar";
+import AppMenu from "./template/menu";
 
 let nextId = 0;
 
@@ -42,8 +43,10 @@ export default function CreateCard() {
   }
 
   return (
+    <>
+    <AppMenu />
     <div className="container mx-auto">
-        <Sidebar />
+        
         
       <div className="flex justify-end mt-3 ">
       <button onClick={handleButtonClick} className={`bg-blue-500 rounded-lg text-white px-3 py-2 absolute right-10 z-50 ${isFormVisible ? 'opacity-0' : 'opacity-100'}`}>เพิ่มข้อมูล</button>
@@ -145,5 +148,6 @@ export default function CreateCard() {
         </table>
       </div>
     </div>
+    </>
   );
 }
