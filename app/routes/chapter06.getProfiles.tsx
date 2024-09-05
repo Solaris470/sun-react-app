@@ -59,7 +59,7 @@ export default function GetProfiles() {
           </select>
         </form>
       </div>
-      <div className="mx-64 grid 3xl:grid-cols-3 grid-cols-1  gap-4">
+      <div className="mx-auto grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
         {filterData.map((item) => (
           <div key={item._id}>
             <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
