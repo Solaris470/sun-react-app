@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 export default function GetProfiles() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedRole, setSelectedRole] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,6 +20,16 @@ export default function GetProfiles() {
     fetchData();
   }, []);
 
+  const handleRoleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedRole(event.target.value);
+  };
+
+
+  const filterData =
+    selectedRole == ""
+      ? data
+      : data.filter((item) => item.major == selectedRole);
+
   if (loading) {
     return <p className="m-5 p-5">Loading...</p>;
   }
@@ -27,9 +38,29 @@ export default function GetProfiles() {
     <>
       <div className="m-5 p-5">
         <h1 className="text-2xl">Contact Company:</h1>
+        <form className="max-w-sm mx-auto">
+          <label
+            htmlFor="roles"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Select Role:
+          </label>
+          <select
+            id="roles"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            value={selectedRole}
+            onChange={handleRoleChange} // Handle the change event
+          >
+            <option value="">Choose Role</option>
+            <option value="Information Technology">
+              Information Technology
+            </option>
+            <option value="Software Analysis">Software Analysis</option>
+          </select>
+        </form>
       </div>
-      <div className="mx-80 grid grid-cols-2 md:grid-cols-3 gap-4">
-        {data.map((item) => (
+      <div className="mx-64 grid 3xl:grid-cols-3 grid-cols-1  gap-4">
+        {filterData.map((item) => (
           <div key={item._id}>
             <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
               <div className="flex justify-end px-4 pt-4">
